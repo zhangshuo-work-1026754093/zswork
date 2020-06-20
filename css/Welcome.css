@@ -1,0 +1,190 @@
+html {
+    font-size: 15px;
+  }
+  
+  body {
+    background-color: #dcdde1;
+    display: flex;
+    justify-content: center;
+    /* 使得内容居中 */
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    color:  #dcdde1;
+    font-family: consolas;
+    margin: 0;
+    padding: 0;
+    font-size: 8rem;
+    letter-spacing: 0.1rem;
+    position: relative;
+  }
+  
+  h1::after {
+      /* 使用伪类元素，进行遮盖 */
+    content: attr(data-spotlight);
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    -webkit-clip-path: ellipse(100px 100px at 0% 50%);
+    clip-path: ellipse(100px 100px at 0% 50%);
+    animation: spotlight 5s infinite;
+    background-image: url(../img/Welcome/photo-1579547621869-0ddb5f237392.jpg);
+    /* 导入彩色背景图片 */
+    /* background: black; */
+    background-size: 150%;
+    background-position: center center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    white-space: nowrap;
+  }
+  
+  @keyframes spotlight {
+      /* 聚光灯到达最右边 */
+    0% {
+      -webkit-clip-path: ellipse(100px 100px at 0% 50%);
+      clip-path: ellipse(100px 100px at 0% 50%);
+    }
+     /* 聚光灯到达最左边 */
+    50% {
+      -webkit-clip-path: ellipse(100px 100px at 100% 50%);
+      clip-path: ellipse(100px 100px at 100% 50%);
+    }
+    /* 聚光灯回到最右边 */
+    100% {
+      -webkit-clip-path: ellipse(100px 100px at 0% 50%);
+      clip-path: ellipse(100px 100px at 0% 50%);
+    }
+  }
+
+  /* 搜索框实现 */
+  .search-box{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:white;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+  }
+  
+  .search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+  }
+  
+  .search-box:hover > .search-btn{
+    background: white;
+  }
+  
+  .search-btn{
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+  }
+  
+  .search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    
+  }
+  
+
+  .start{
+    position: absolute;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2f3542;
+    text-transform:uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    top:10%;
+    font-family: consolas;
+    right: 42.5%;
+    font-weight: 900;
+    
+  }
+  .start:hover{
+    color: black;
+    background: white;
+    box-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+    transition-delay: 1s;
+  }
+  .start span
+  {
+    position: absolute;
+    display: block;
+  }
+  .start span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#2f3542);
+  }
+  .start:hover span:nth-child(1){
+    left:100%;
+    transition: 1s;
+  }
+  .start span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#2f3542);
+  }
+  .start:hover span:nth-child(3){
+    right:100%;
+    transition: 1s;
+    transition-delay:0.5s ;
+  }
+  .start span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#2f3542);
+  }
+  .start:hover span:nth-child(2){
+    top:100%;
+    transition: 1s;
+    transition-delay:0.25s ;
+  }
+  .start span:nth-child(4){
+    bottom : -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#2f3542);
+  }
+  .start:hover span:nth-child(4){
+    bottom:100%;
+    transition: 1s;
+    transition-delay:0.75s ;
+  }
+  img{
+    width: 25px;
+    height: 25px;
+  }
